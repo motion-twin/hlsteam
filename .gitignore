@@ -20,3 +20,5 @@ temp/
 /x64
 /native/*.o
 /steam.hdll
+**/.DS_Store
+/native/*
