@@ -21,4 +21,3 @@ temp/
 /native/*.o
 /steam.hdll
 **/.DS_Store
-/native/*

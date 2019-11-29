@@ -2,7 +2,7 @@ LBITS := $(shell getconf LONG_BIT)
 
 UNAME := $(shell uname)
 
-CFLAGS = -Wall -O3 -I src -I native/include -fPIC -I ../sdk/public
+CFLAGS = -Wall -O3 -I src -I native/include -fPIC -I sdk/public
 
 ifndef ARCH
 	ARCH = $(LBITS)
@@ -21,7 +21,7 @@ endif
 SDKVER=142
 #SDKURL=https://partner.steamgames.com/downloads/steamworks_sdk_${SDKVER}.zip
 
-LFLAGS = -lhl -lsteam_api -lstdc++ -L native/lib/$(OS)$(LIBARCH) -L ../sdk/redistributable_bin/$(OS)$(LIBARCH)
+LFLAGS = -lhl -lsteam_api -lstdc++ -L native/lib/$(OS)$(LIBARCH) -L sdk/redistributable_bin/$(OS)$(LIBARCH)
 
 SRC = native/cloud.o native/common.o native/controller.o native/friends.o native/gameserver.o \
 	native/matchmaking.o native/networking.o native/stats.o native/ugc.o
@@ -35,15 +35,10 @@ prepare:
 	mkdir -p native/lib
 	mkdir -p native/include
 	mkdir -p native/lib/$(OS)$(LIBARCH)
-
-	#sdk install
-	rm -rf ../sdk
-	#cd ..; curl ${SDKURL};
-	cd ..; unzip -q steamworks_sdk_${SDKVER}.zip;
 	
 	cp ../../../hashlink/src/hl.h native/include/
 	cp ../../../hashlink/libhl.dylib native/lib/$(OS)$(LIBARCH)/
-	#cp -r ../sdk/redistributable_bin/$(OS)$(ARCH) native/lib/$(OS)$(LIBARCH)
+	#cp -r sdk/redistributable_bin/$(OS)$(ARCH) native/lib/$(OS)$(LIBARCH)
 
 install:
 	cp steam.hdll /usr/lib
