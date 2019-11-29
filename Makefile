@@ -8,20 +8,27 @@ ifndef ARCH
 	ARCH = $(LBITS)
 endif
 
+ifndef HASHLINK_SRC
+	HASHLINK_SRC = ../../../hashlink
+endif
+
 LIBARCH=$(ARCH)
+LIBHL=libhl.xxx
 ifeq ($(UNAME),Darwin)
 OS=osx
 # universal lib in osx32 dir
 LIBARCH=32
+LIBHL=libhl.dylib
 else
 OS=linux
 CFLAGS += -std=c++0x
+LIBHL=libhl.so
 endif
 
 SDKVER=142
 #SDKURL=https://partner.steamgames.com/downloads/steamworks_sdk_${SDKVER}.zip
 
-LFLAGS = -lhl -lsteam_api -lstdc++ -L native/lib/$(OS)$(LIBARCH) -L sdk/redistributable_bin/$(OS)$(LIBARCH)
+LFLAGS = -lhl -lsteam_api -lstdc++ -L native/lib/$(OS)$(LIBARCH) -L ../../../hashlink -L sdk/redistributable_bin/$(OS)$(LIBARCH)
 
 SRC = native/cloud.o native/common.o native/controller.o native/friends.o native/gameserver.o \
 	native/matchmaking.o native/networking.o native/stats.o native/ugc.o
@@ -36,14 +43,9 @@ prepare:
 	mkdir -p native/include
 	mkdir -p native/lib/$(OS)$(LIBARCH)
 	
-	cp ../../../hashlink/src/hl.h native/include/
-	cp ../../../hashlink/libhl.dylib native/lib/$(OS)$(LIBARCH)/
-	#cp -r sdk/redistributable_bin/$(OS)$(ARCH) native/lib/$(OS)$(LIBARCH)
+	cp $(HASHLINK_SRC)/src/hl.h native/include/
+	cp $(HASHLINK_SRC)/$(LIBHL) native/lib/$(OS)$(LIBARCH)/
 
-install:
-	cp steam.hdll /usr/lib
-	cp native/lib/$(OS)$(ARCH)/libsteam_api.* /usr/lib
-	
 .SUFFIXES : .cpp .o
 
 .cpp.o :
