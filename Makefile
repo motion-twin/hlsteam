@@ -38,11 +38,8 @@ all: ${SRC}
 
 prepare:
 	rm -rf native/lib/$(OS)$(LIBARCH)
-	
-	mkdir -p native/lib
 	mkdir -p native/include
 	mkdir -p native/lib/$(OS)$(LIBARCH)
-	
 	cp $(HASHLINK_SRC)/src/hl.h native/include/
 	cp $(HASHLINK_SRC)/$(LIBHL) native/lib/$(OS)$(LIBARCH)/
 
