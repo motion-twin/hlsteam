@@ -43,15 +43,15 @@ prepare:
 	cp $(HASHLINK_SRC)/src/hl.h native/include/
 	cp $(HASHLINK_SRC)/$(LIBHL) native/lib/$(OS)$(LIBARCH)/
 
-	chmod +x sdk/ContentBuilder/builder_linux/steamcmd.sh
-	chmod +x sdk/ContentBuilder/builder_linux/linux32/steamcmd
-	chmod +x sdk/ContentBuilder/builder_linux/linux32/steamerrorreporter
+	chmod +x sdk/tools/ContentBuilder/builder_linux/steamcmd.sh
+	chmod +x sdk/tools/ContentBuilder/builder_linux/linux32/steamcmd
+	chmod +x sdk/tools/ContentBuilder/builder_linux/linux32/steamerrorreporter
 	
 	git clone git@git.motion-twin.com:deadcells/SteamContentBuilder.git
-	rm -rf sdk/ContentBuilder/scripts/
-	mv SteamContentBuilder/.git* sdk/ContentBuilder/
-	mv SteamContentBuilder/* sdk/ContentBuilder/
-	rm SteamContentBuilder 
+	rm -rf sdk/tools/ContentBuilder/scripts/
+	mv SteamContentBuilder/.git* sdk/tools/ContentBuilder/
+	mv SteamContentBuilder/* sdk/tools/ContentBuilder/
+	rmdir SteamContentBuilder 
 
 .SUFFIXES : .cpp .o
 
