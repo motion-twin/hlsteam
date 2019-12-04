@@ -47,7 +47,7 @@ prepare:
 	chmod +x sdk/tools/ContentBuilder/builder_linux/linux32/steamcmd
 	chmod +x sdk/tools/ContentBuilder/builder_linux/linux32/steamerrorreporter
 	
-	git clone git@git.motion-twin.com:deadcells/SteamContentBuilder.git
+	git clone https://git.motion-twin.com/deadcells/SteamContentBuilder
 	rm -rf sdk/tools/ContentBuilder/scripts/
 	mv SteamContentBuilder/.git* sdk/tools/ContentBuilder/
 	mv SteamContentBuilder/* sdk/tools/ContentBuilder/
