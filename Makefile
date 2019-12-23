@@ -47,11 +47,13 @@ prepare:
 	chmod +x sdk/tools/ContentBuilder/builder_linux/linux32/steamcmd
 	chmod +x sdk/tools/ContentBuilder/builder_linux/linux32/steamerrorreporter
 	
+	rm -f sdk/tools/ContentBuilder/.git*
+	rm -rf sdk/tools/ContentBuilder/scripts/
 	rm -rf SteamContentBuilder/
 	git clone git@git.motion-twin.com:deadcells/SteamContentBuilder.git
-	rm -rf sdk/tools/ContentBuilder/scripts/
-	mv -f SteamContentBuilder/.git* sdk/tools/ContentBuilder/ 2>/dev/null
-	mv -f SteamContentBuilder/* sdk/tools/ContentBuilder/
+	
+	mv SteamContentBuilder/.git* sdk/tools/ContentBuilder/ 2>/dev/null
+	mv SteamContentBuilder/* sdk/tools/ContentBuilder/
 	rmdir SteamContentBuilder 
 
 .SUFFIXES : .cpp .o
