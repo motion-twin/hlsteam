@@ -50,7 +50,7 @@ prepare:
 	rm -rf SteamContentBuilder/
 	git clone git@git.motion-twin.com:deadcells/SteamContentBuilder.git
 	rm -rf sdk/tools/ContentBuilder/scripts/
-	mv -f SteamContentBuilder/.git* sdk/tools/ContentBuilder/
+	mv -f SteamContentBuilder/.git* sdk/tools/ContentBuilder/ 2>/dev/null
 	mv -f SteamContentBuilder/* sdk/tools/ContentBuilder/
 	rmdir SteamContentBuilder 
 
