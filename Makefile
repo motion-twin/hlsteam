@@ -9,7 +9,7 @@ ifndef ARCH
 endif
 
 ifndef HASHLINK_SRC
-	HASHLINK_SRC = ../../../.tools/hashlink
+	HASHLINK_SRC = ../../../hashlink
 endif
 
 LIBARCH=$(ARCH)
