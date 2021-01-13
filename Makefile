@@ -28,7 +28,7 @@ endif
 SDKVER=142
 #SDKURL=https://partner.steamgames.com/downloads/steamworks_sdk_${SDKVER}.zip
 
-LFLAGS = -lhl -lsteam_api -lstdc++ -L native/lib/$(OS)$(LIBARCH) -L ../../../hashlink -L sdk/redistributable_bin/$(OS)$(LIBARCH)
+LFLAGS = -lhl -lsteam_api -lstdc++ -L native/lib/$(OS)$(LIBARCH) -L $(HASHLINK_SRC) -L sdk/redistributable_bin/$(OS)$(LIBARCH)
 
 SRC = native/cloud.o native/common.o native/controller.o native/friends.o native/gameserver.o \
 	native/matchmaking.o native/networking.o native/stats.o native/ugc.o
