@@ -99,32 +99,32 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <TargetExt>.hdll</TargetExt>
-    <IncludePath>sdk/public;%HASHLINK_SRC%/src;$(IncludePath)</IncludePath>
-    <LibraryPath>sdk/redistributable_bin;%HASHLINK_SRC%/$(Configuration);$(LibraryPath)</LibraryPath>
+    <IncludePath>sdk/public;$(HASHLINK_SRC)/src;$(IncludePath)</IncludePath>
+    <LibraryPath>sdk/redistributable_bin;$(HASHLINK_SRC)/$(Configuration);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <TargetExt>.hdll</TargetExt>
-    <IncludePath>sdk/public;%HASHLINK_SRC%/src;$(IncludePath)</IncludePath>
-    <LibraryPath>sdk/redistributable_bin;%HASHLINK_SRC%/$(Configuration);$(LibraryPath)</LibraryPath>
+    <IncludePath>sdk/public;$(HASHLINK_SRC)/src;$(IncludePath)</IncludePath>
+    <LibraryPath>sdk/redistributable_bin;$(HASHLINK_SRC)/$(Configuration);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseVS2013|Win32'">
     <TargetExt>.hdll</TargetExt>
-    <IncludePath>sdk/public;%HASHLINK_SRC%/src;$(IncludePath)</IncludePath>
-    <LibraryPath>sdk/redistributable_bin;%HASHLINK_SRC%/$(Configuration);$(LibraryPath)</LibraryPath>
+    <IncludePath>sdk/public;$(HASHLINK_SRC)/src;$(IncludePath)</IncludePath>
+    <LibraryPath>sdk/redistributable_bin;$(HASHLINK_SRC)/$(Configuration);$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LibraryPath>sdk/redistributable_bin/win64;%HASHLINK_SRC%/x64/$(Configuration);$(LibraryPath)</LibraryPath>
-    <IncludePath>sdk/public;%HASHLINK_SRC%/src;$(IncludePath)</IncludePath>
+    <LibraryPath>sdk/redistributable_bin/win64;$(HASHLINK_SRC)/x64/$(Configuration);$(LibraryPath)</LibraryPath>
+    <IncludePath>sdk/public;$(HASHLINK_SRC)/src;$(IncludePath)</IncludePath>
     <TargetExt>.hdll</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <LibraryPath>sdk/redistributable_bin/win64;%HASHLINK_SRC%/x64/$(Configuration);$(LibraryPath)</LibraryPath>
-    <IncludePath>sdk/public;%HASHLINK_SRC%/src;$(IncludePath)</IncludePath>
+    <LibraryPath>sdk/redistributable_bin/win64;$(HASHLINK_SRC)/x64/$(Configuration);$(LibraryPath)</LibraryPath>
+    <IncludePath>sdk/public;$(HASHLINK_SRC)/src;$(IncludePath)</IncludePath>
     <TargetExt>.hdll</TargetExt>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='ReleaseVS2013|x64'">
-    <LibraryPath>sdk/redistributable_bin/win64;%HASHLINK_SRC%/x64/$(Configuration);$(LibraryPath)</LibraryPath>
-    <IncludePath>sdk/public;%HASHLINK_SRC%/src;$(IncludePath)</IncludePath>
+    <LibraryPath>sdk/redistributable_bin/win64;$(HASHLINK_SRC)/x64/$(Configuration);$(LibraryPath)</LibraryPath>
+    <IncludePath>sdk/public;$(HASHLINK_SRC)/src;$(IncludePath)</IncludePath>
     <TargetExt>.hdll</TargetExt>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
